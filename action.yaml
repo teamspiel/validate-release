@@ -1,0 +1,13 @@
+name: "Validate Tags"
+author: "teamspiel GmbH"
+description: "Validates the tags of releases and pre-releases"
+inputs:
+  prerelease:
+    description: "Whether to validate pre-releases"
+    required: false
+    default: "false"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.prerelease }}
